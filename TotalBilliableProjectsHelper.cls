@@ -21,10 +21,10 @@ public class TotalBilliableProjectsHelper {
         }                                    
 										
 
-		LIST <AggregateResult> countProjes = [Select Developer__c, COUNT(Id)total
-                                              From Project_Assignment__c
-                                              Where Project__c IN : validProjects 
-                                              GROUP BY Developer__c];
+	LIST <AggregateResult> countProjes = [Select Developer__c, COUNT(Id)total
+					      From Project_Assignment__c
+					      Where Project__c IN : validProjects 
+					      GROUP BY Developer__c];
   
         system.debug('Count valid projects for every dev ' + countProjes);
         
@@ -46,7 +46,7 @@ public class TotalBilliableProjectsHelper {
             dev.TotalBillableProjects__c = 0;
         }
 
-		return myResult;
+	return myResult;
     }
     
 
